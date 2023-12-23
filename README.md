@@ -5,6 +5,8 @@ Inject custom html pages into your doxygen documentation, that can be navigated 
 
 First download the `doxygen-custom-page-injector.js` script from this repository. 
 
+[Releases](https://github.com/basicx-StrgV/doxygen-custom-page-injector/releases)
+
 ### Configuring the layout
 Use doxygen to create a custom layout xml file.  
 The layout file can be created with the following command:
