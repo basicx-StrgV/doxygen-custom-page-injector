@@ -41,6 +41,9 @@ HTML_EXTRA_FILES       = sample.html \
 For the injection to work, the html file needs to be set up in the right way.
 
 ``` html
+<!DOCTYPE html>
+<link rel="icon" href="data:,">
+
 <script type="text/javascript" src="./doxygen-custom-page-injector.js"></script>
 
 <div id="injection-wrapper" nav-to="sample.html" style="display: none;">
@@ -48,13 +51,21 @@ For the injection to work, the html file needs to be set up in the right way.
 </div>
 ```
 
-The first thing in the html file should be the linked injection script.  
+The html file should start with the linked injection script.
+
+Optionally, the following can be added to the top of the file, to use the correct doctype and remove the automatic favicon request, that will be sent by the browser before the doxygen layout gets injected.
+``` html
+<!DOCTYPE html>
+<link rel="icon" href="data:,">
+```
 
 After that comes a `div` element that wraps the html that should be injected into the doxygen layout.  
 This div needs to have the `id` `injection-wrapper` to allow the script to find it.  
 The `nav-to` attribute should contain the name of your html file, so doxygen knows what navigation item to select.  
 
 Setting the `display` style to `none` is optional but recommended if you don't want anything to show up before it gets injected.
+
+
 
 **All of your custom html should be inside of the `injection-wrapper` element, because only the content of that element will be injected and the rest will be trimmed.**
 
